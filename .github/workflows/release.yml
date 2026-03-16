@@ -39,7 +39,7 @@ jobs:
         shell: pwsh
         run: |
           $tag = "${{ github.ref_name }}"
-          $outName = "ZundamonTTSPlayer-$tag-windows.zip"
+          $outName = "ZundamonTTSRewardBot-$tag-windows.zip"
           Compress-Archive -Path dist\* -DestinationPath $outName
           echo "ASSET_NAME=$outName" >> $env:GITHUB_ENV
 
