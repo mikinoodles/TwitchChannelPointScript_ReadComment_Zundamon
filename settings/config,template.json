@@ -1,0 +1,14 @@
+{
+  "voicevox_settings": {
+    "voicevox_path": "",
+    "zundamon_id": 3,
+    "voicevox_url": "http://127.0.0.1:50021"
+  },
+  "twitch_settings": {
+    "client_id": "",
+    "user_access_token": "",
+    "broadcaster_user_id": "",
+    "reward_id": ""
+  },
+  "delete_wavs_on_program_complete": true
+}
