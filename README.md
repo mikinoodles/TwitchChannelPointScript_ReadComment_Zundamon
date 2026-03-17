@@ -61,13 +61,13 @@ VOICEVOX
 最新版は **GitHub Releases** からダウンロードしてください。
 
 ```
-https://github.com/<ユーザー名>/<リポジトリ名>/releases
+https://github.com/mikinoodles/TwitchChannelPointScript_ReadComment_Zundamon/releases
 ```
 
 zip を解凍し、以下を実行します。
 
 ```
-MyApp.exe
+ZundamonTTSRewardBot.exe
 ```
 
 ---
