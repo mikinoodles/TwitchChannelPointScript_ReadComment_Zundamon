@@ -45,6 +45,12 @@ jobs:
         run: |
           Copy-Item -Path "settings" -Destination "dist/settings" -Recurse -Force
 
+      - name: Copy README and LICENSE into dist
+        shell: pwsh
+        run: |
+          Copy-Item -Path "README.md" -Destination "dist/README.md" -Force
+          Copy-Item -Path "LICENSE" -Destination "dist/LICENSE" -Force
+
       - name: Create _generated folder in dist
         shell: pwsh
         run: |
