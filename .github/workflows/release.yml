@@ -31,10 +31,10 @@ jobs:
           pip install -r requirements.txt
           pip install pyinstaller
 
-      - name: Prepare build directories
-        shell: pwsh
-        run: |
-          New-Item -ItemType Directory -Force -Path "_generated" | Out-Null
+      # - name: Prepare build directories
+      #   shell: pwsh
+      #   run: |
+      #     New-Item -ItemType Directory -Force -Path "_generated" | Out-Null
 
       - name: Build with PyInstaller
         run: |
@@ -49,6 +49,7 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path "dist/_generated" | Out-Null
+          New-Item -ItemType File -Force -Path "dist/_generated/.gitkeep" | Out-Null
 
       - name: Zip dist output
         shell: pwsh
