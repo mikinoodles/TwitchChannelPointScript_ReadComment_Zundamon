@@ -35,6 +35,16 @@ jobs:
         run: |
           pyinstaller ZundamonTTSRewardBot.spec
 
+      - name: Copy settings folder into dist
+        shell: pwsh
+        run: |
+          Copy-Item -Path "settings" -Destination "dist/settings" -Recurse -Force
+
+      - name: Create _generated folder in dist
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path "dist/_generated" | Out-Null
+
       - name: Zip dist output
         shell: pwsh
         run: |
