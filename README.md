@@ -215,7 +215,7 @@ OBSの
 Application Audio Capture
 ```
 
-で `MyApp.exe` をキャプチャ
+で `ZundamonTTSRewardBot.exe` をキャプチャ
 
 ### 方法2（安定）
 
@@ -231,7 +231,7 @@ Application Audio Capture
 # ディレクトリ構成
 
 ```
-MyProject
+(Root directory)
 │
 ├─ main.py
 ├─ ZundamonTTSRewardBot.spec
@@ -259,6 +259,7 @@ MyProject
 
 - Windows 10 / 11
 - VOICEVOX
+  - **VOICEVOXの規約に同意した上でご利用ください。**
 
 ### Python版
 
