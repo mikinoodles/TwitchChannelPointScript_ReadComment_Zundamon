@@ -49,7 +49,7 @@ jobs:
       - name: Create config.json in dist from source template
         shell: pwsh
         run: |
-          New-Item -ItemType File -Force -Path "dist/settings/test" | Out-Null
+          Copy-Item -File "settings/config.template.json" -Destination "dist/settings/config.json" -Force
 
       # - name: Remove copied config.template.json from dist
       #   shell: pwsh
