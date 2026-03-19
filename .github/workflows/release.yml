@@ -46,10 +46,19 @@ jobs:
           New-Item -ItemType Directory -Force -Path "dist/settings" | Out-Null
           Copy-Item -Path "settings/*" -Destination "dist/settings" -Recurse -Force
 
-      - name: Create config.json in dist from source template
+      - name: Show settings files
         shell: pwsh
         run: |
-          Copy-Item -File "settings/config.template.json" -Destination "dist/settings/config.json" -Force
+          Write-Host "=== repo settings ==="
+          Get-ChildItem -Path "settings" -Recurse | Select-Object FullName
+
+          Write-Host "=== dist settings ==="
+          Get-ChildItem -Path "dist/settings" -Recurse | Select-Object FullName
+
+      # - name: Create config.json in dist from source template
+      #   shell: pwsh
+      #   run: |
+      #     Copy-Item -Path "settings/config.template.json" -Destination "dist/settings/config.json" -Force
 
       # - name: Remove copied config.template.json from dist
       #   shell: pwsh
