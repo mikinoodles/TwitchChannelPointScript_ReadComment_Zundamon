@@ -46,11 +46,17 @@ jobs:
           New-Item -ItemType Directory -Force -Path "dist/settings" | Out-Null
           Copy-Item -Path "settings/*" -Destination "dist/settings" -Recurse -Force
 
-      - name: Create config.json from template
+      - name: Create config.json in dist from source template
         shell: pwsh
         run: |
-          Copy-Item -Path "dist/settings/config.template.json" -Destination "dist/settings/config.json" -Force
-          Remove-Item -Path "dist/settings/config.template.json" -Force
+          Copy-Item -Path "settings/config.template.json" -Destination "dist/settings/config.json" -Force
+
+      - name: Remove copied config.template.json from dist
+        shell: pwsh
+        run: |
+          if (Test-Path "dist/settings/config.template.json") {
+            Remove-Item -Path "dist/settings/config.template.json" -Force
+          }
 
       - name: Copy README and LICENSE into dist
         shell: pwsh
