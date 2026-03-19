@@ -46,10 +46,10 @@ jobs:
           New-Item -ItemType Directory -Force -Path "dist/settings" | Out-Null
           Copy-Item -Path "settings/*" -Destination "dist/settings" -Recurse -Force
 
-      # - name: Create config.json in dist from source template
-      #   shell: pwsh
-      #   run: |
-      #     Copy-Item -Path "settings/config.template.json" -Destination "dist/settings/config.json" -Force
+      - name: Create config.json in dist from source template
+        shell: pwsh
+        run: |
+          New-Item -ItemType File -Force -Path "dist/settings/test" | Out-Null
 
       # - name: Remove copied config.template.json from dist
       #   shell: pwsh
