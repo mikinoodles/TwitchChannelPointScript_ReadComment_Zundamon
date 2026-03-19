@@ -45,6 +45,9 @@ jobs:
         run: |
           Copy-Item -Path "settings" -Destination "dist/settings" -Recurse -Force
 
+      - name: Rename config file
+        run: mv settings/config.template.json settings/config.json
+
       - name: Copy README and LICENSE into dist
         shell: pwsh
         run: |

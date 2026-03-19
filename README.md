@@ -74,23 +74,11 @@ ZundamonTTSRewardBot.exe
 
 # セットアップ
 
-初回起動前に設定ファイルを作成します。
-
-```
-settings/config.template.json
-```
-
-をコピーして
+初回起動前に設定ファイル内の値を記入してください。
 
 ```
 settings/config.json
 ```
-
-を作成してください。
-
----
-
-# 設定ファイル
 
 例：
 
