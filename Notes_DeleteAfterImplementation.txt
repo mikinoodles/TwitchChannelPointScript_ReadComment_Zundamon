@@ -1,0 +1,44 @@
+Implementing the Twitch Authorization Code Grant flow involves registering an app on the Twitch Developer Console (https://dev.twitch.tv/console), redirecting users to Twitch to authorize, receiving a code via a redirect URI, and exchanging that code for an access token on your server. This flow securely handles user data, allowing server-to-server API requests and token refreshing. [1, 2, 3, 4]  
+Key Steps to Implementation 
+
+1. Register Your App: 
+
+	• Go to the Twitch Developers Console and create a new application. 
+	• Set the OAuth Redirect URI (e.g., ) and note your Client ID and Client Secret. 
+
+2. Redirect User to Twitch: 
+
+	• Direct your users to the authorization URL:. 
+	• Include necessary scopes (e.g., , ) to define what access your app requires. 
+
+3. Receive the Authorization Code: 
+
+	• Once the user authorizes the app, Twitch redirects them back to your  with a temporary  parameter. 
+	• Example: . 
+
+4. Exchange Code for Token: 
+
+	• On your server, send a  request to  to exchange the temporary code for an access token. 
+	• Required Parameters: 
+
+		• : Your app's client ID. 
+		• : Your app's client secret. 
+		• : The authorization code received. 
+		• : . 
+		• : Must match the registered URI exactly. 
+
+5. Refresh Access Tokens: 
+
+	• Use the  returned from the initial exchange to get a new access token when the current one expires, using . [1, 2, 3, 5, 6]  
+
+Note: This flow requires a backend server to securely store the client secret and exchange the code. [1]  
+
+AI can make mistakes, so double-check responses
+
+[1] https://dev.twitch.tv/docs/authentication/getting-tokens-oauth/
+[2] https://blog.twitch.tv/en/2019/11/06/twitch-authentication-understanding-which-protocol-and-flow-is-right-for-you/
+[3] https://www.zeepalm.com/blog/twitch-api-integration-guide
+[4] https://www.youtube.com/watch?v=aJwQE80kh6w
+[5] https://dev.twitch.tv/docs/authentication/register-app
+[6] https://dev.twitch.tv/docs/authentication/refresh-tokens/
+
