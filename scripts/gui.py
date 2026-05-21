@@ -1,33 +1,37 @@
 import tkinter as tk
 import tkinter.scrolledtext as st
+from tkinter import ttk
 import logging
 
 
 class Window(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title = "Zundamon Twitch Reward TTS"
 
-        self.geometry("350x500")
-        self.resizable(False, True)
-        self.minsize(350, 100)
-        self.maxsize(350, 1000)
-
-        self.option_add("*tearoff", False)
+        self.set_window_settings()
 
         menubar = Menubar(self)
 
         self.config(menu=menubar)
+
+    def set_window_settings(self) -> None:
+        self.wm_title("Zundamon Twitch Reward TTS")
+
+        self.geometry("350x500")
+        self.resizable(width=False, height=True)
+        self.minsize(width=350, height=100)
+        self.maxsize(width=350, height=1000)
+
+        self.option_add("*tearoff", False)
 
 
 class Menubar(tk.Menu):
     def __init__(self, master: tk.Misc | None = None):
         super().__init__(master)
 
-        configMenu = tk.Menu(master=self, tearoff=0)
-
-        self.add_cascade(label="設定", menu = configMenu)
-        # TODO: Associate action to config menu option
+        # TODO: Make sure to apply actual commands
+        self.add_command(label='接続設定', command='temp')
+        self.add_command(label='NGワード', command='temp')
 
 
 class ControlArea(tk.Frame):
